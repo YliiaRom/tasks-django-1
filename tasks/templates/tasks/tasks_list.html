@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{%block content%}
+    <h1>Tasks</h1>
+
+
+      {% for task in tasks%}
+      <div class="card">
+          <h2>{{task.category}}</h2>
+        <p>{{task.id}} - {{task.title}}</p>
+        <p>{{task.description}} - {{task.title}}</p>
+        <p>{{task.status}} - {{task.title}}</p>
+        <p>{{task.priority}} - {{task.title}}</p>
+      </div>
+      {% endfor %}
+
+{% endblock%}
