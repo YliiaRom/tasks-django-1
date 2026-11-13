@@ -36,8 +36,12 @@ def tasks_about(request):
   return render(request, 'tasks/about.html')
 
 def tasks_detail(request,pk):
-  task =next((task for task in TASKS if task["id"] == pk), None)
-  if task is None:
+  task_detail = None
+  for task in TASKS:
+     if task['id'] == pk:
+        task_detail = task
+
+  if task_detail is None:
       raise Http404('немає такої задачі')
 
-  return render(request, "tasks/tasks_detail.html", context={'task':task})
+  return render(request, "tasks/tasks_detail.html", context={'task':task_detail})

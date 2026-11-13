@@ -11,6 +11,7 @@
         <p>{{task.description}} - {{task.title}}</p>
         <p>{{task.status}} - {{task.title}}</p>
         <p>{{task.priority}} - {{task.title}}</p>
+        <a href="{% url 'tasks:detail' pk=task.id%}" class="btn">Detail</a>
       </div>
       {% endfor %}
 
